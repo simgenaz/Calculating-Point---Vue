@@ -18,8 +18,8 @@
         <button @click="finalPoint()">Calculate Final Point</button>
         <p> Your final point is: {{ finalPoint() }}</p> 
         <hr>
-        <button @click="Sum()">Calculate Sum</button>
-        <p> Your Sum point is: {{ Sum() }}</p>  
+        <button @click="Sum(midterm , final)">Calculate Sum</button>
+        <p> Your Sum point is: {{ Sum(midterm,final) }}</p>  
         
         
     </div>
@@ -41,7 +41,7 @@
                     return ((this.final * 60) / 100)
                 },
                 Sum(midterm , final){
-                    return (this.midterm + this.final) >= 50 ? 'Geçtiniz!!' : 'Malesef Geçemediniz... :('
+                    return (this.finalPoint() +this.midtermPoint()) > 50 ? 'Geçtiniz!!' : 'Malesef Geçemediniz... :('
                 }
 
 
