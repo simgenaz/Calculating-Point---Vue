@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Hesaplama</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        
+        <input type="text" v-model="midterm">
+        <button @click="midtermPoint()">Calculate Midterm Point</button>
+        <p> Your Midterm point is: {{ midtermPoint() }}</p> 
+        <hr>
+        <input type="text" v-model="final">
+        <button @click="finalPoint()">Calculate Final Point</button>
+        <p> Your final point is: {{ finalPoint() }}</p> 
+        <hr>
+        <button @click="Sum()">Calculate Sum</button>
+        <p> Your Sum point is: {{ Sum() }}</p> 
+        
+        
+    </div>
+
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+                midterm: 0,
+                final: 0,
+                sum: 0,
+            },
+            methods: {
+                midtermPoint(){
+                    return ((this.midterm * 40) / 100)
+                },
+                finalPoint(){
+                    return ((this.final * 60) / 100)
+                },
+                Sum(midterm , final){
+                    return (this.midterm + this.final) >= 50 ? 'Geçtiniz!!' : 'Malesef Geçemediniz... :('
+                }
+
+
+            }
+        })
+
+    </script>
+
+    
+</body>
+</html>
